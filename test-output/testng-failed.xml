@@ -5,8 +5,8 @@
     <classes>
       <class name="MyTestCase.AlmosaferTest">
         <methods>
+          <include name="SetDate1"/>
           <include name="MySetup"/>
-          <include name="ClosePopUP"/>
         </methods>
       </class> <!-- MyTestCase.AlmosaferTest -->
     </classes>

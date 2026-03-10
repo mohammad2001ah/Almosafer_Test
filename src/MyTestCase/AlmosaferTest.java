@@ -24,7 +24,7 @@ public class AlmosaferTest {
 	public void MySetup() {
 		driver.get(MyWebSite);
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 	}
 
 	@Test(priority = 1, enabled = true)
@@ -43,7 +43,7 @@ public class AlmosaferTest {
 
 	}
 
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 2, enabled = false)
 	public void ChangeLanguage() throws InterruptedException {
 		WebElement BurgerMenu = driver.findElement(By.xpath("//div[@data-testid='leading__icon']"));
 		BurgerMenu.click();
@@ -74,11 +74,14 @@ public class AlmosaferTest {
 		driver.findElement(By.name("destination")).sendKeys(country2);
 		Thread.sleep(1000);
 		driver.findElement(By.name("destination")).sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
+		
 	}
-	
-	@AfterTest
-	public void CloseDriver() {
-		driver.quit();
+	@Test(priority = 4,enabled = true)
+	public void SetDate1() {
+		WebElement checkIn = driver.findElement(By.id("testIdPickerPrefix__DatePicker__DepartureDate"));
+		checkIn.click();
+		driver.findElement(By.xpath("//button[text()='13']")).click();
+		driver.findElement(By.xpath("//button[text()='25']")).click();
 	}
 
 }
