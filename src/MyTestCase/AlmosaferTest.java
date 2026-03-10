@@ -10,56 +10,75 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class AlmosaferTest {
-	WebDriver driver=new EdgeDriver();
-	String MyWebSite="https://sa.almosafer.com/";
-	Random rand=new Random();
-	
+	WebDriver driver = new EdgeDriver();
+	String MyWebSite = "https://sa.almosafer.com/";
+	Random rand = new Random();
+
 	@BeforeTest
 	public void MySetup() {
 		driver.get(MyWebSite);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
-	@Test(priority = 1,enabled = true)
+
+	@Test(priority = 1, enabled = true)
 	public void ClosePopUP() {
-		WebElement ContinueButton=driver.findElement(By.id("mui-5"));
-		ContinueButton.click();
+
+		try {
+			WebElement ContinueButton = driver.findElement(By.id("mui-5"));
+			if (ContinueButton.isDisplayed()) {
+				ContinueButton.click();
+				Assert.assertFalse(driver.findElement(By.id("mui-5")).isDisplayed());
+			}
+		}
+		catch (Exception e) {
+			System.out.println("Popup not found, continuing...");
+		}
+
 	}
-	
-	@Test(priority = 2,enabled = false)
+
+	@Test(priority = 2, enabled = true)
 	public void ChangeLanguage() throws InterruptedException {
-		WebElement BurgerMenu=driver.findElement(By.xpath("//div[@data-testid='leading__icon']"));
+		WebElement BurgerMenu = driver.findElement(By.xpath("//div[@data-testid='leading__icon']"));
 		BurgerMenu.click();
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
 		Thread.sleep(3000);
-		WebElement ArabicLanguag=driver.findElement(By.xpath("//div[text()='عربي']"));
-		ArabicLanguag.click();
-		WebElement EnglishLanguage=driver.findElement(By.cssSelector("[data-testid='change_language'"));
+		WebElement ArabicLanguage = driver.findElement(By.xpath("//div[text()='عربي']"));
+		ArabicLanguage.click();
+		Assert.assertEquals(driver.findElement(By.tagName("html")).getAttribute("lang"), "ar");
+		WebElement EnglishLanguage = driver.findElement(By.cssSelector("[data-testid='change_language']"));
 		EnglishLanguage.click();
+		Assert.assertEquals(driver.findElement(By.tagName("html")).getAttribute("lang"), "en");
 	}
-	@Test(priority = 3,enabled = true)
+
+	@Test(priority = 3, enabled = true)
 	public void SearchForFlight() throws InterruptedException {
-		String[] countries= {"je","ir","sy"};
-		String[] countries2= {"jor","aus","sud"};
-		int randomeIndex=rand.nextInt(countries.length);
-		int randomeIndex1=rand.nextInt(countries2.length);
-		String country=countries[randomeIndex];
-		String country2=countries2[randomeIndex];
-		//Origin
+		String[] countries = { "je", "ir", "sy" };
+		String[] countries2 = { "jor", "aus", "sud" };
+		int randomeIndex = rand.nextInt(countries.length);
+		int randomeIndex1 = rand.nextInt(countries2.length);
+		String country = countries[randomeIndex];
+		String country2 = countries2[randomeIndex];
+		// Origin
 		driver.findElement(By.name("origin")).sendKeys(country);
 		Thread.sleep(1000);
-		driver.findElement(By.name("origin")).sendKeys(Keys.ARROW_DOWN,Keys.ENTER);
-		//Destination
+		driver.findElement(By.name("origin")).sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
+		// Destination
 		driver.findElement(By.name("destination")).sendKeys(country2);
 		Thread.sleep(1000);
-		driver.findElement(By.name("destination")).sendKeys(Keys.ARROW_DOWN,Keys.ENTER);
-		}
+		driver.findElement(By.name("destination")).sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
+	}
 	
-	
+	@AfterTest
+	public void CloseDriver() {
+		driver.quit();
+	}
 
 }

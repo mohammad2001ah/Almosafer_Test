@@ -1,24 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="3" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-10T23:14:51 EET" name="Default suite" finished-at="2026-03-10T23:14:57 EET" duration-ms="6317">
+  <suite started-at="2026-03-10T23:43:38 EET" name="Default suite" finished-at="2026-03-10T23:44:01 EET" duration-ms="22971">
     <groups>
     </groups>
-    <test started-at="2026-03-10T23:14:51 EET" name="Default test" finished-at="2026-03-10T23:14:57 EET" duration-ms="6317">
+    <test started-at="2026-03-10T23:43:38 EET" name="Default test" finished-at="2026-03-10T23:44:01 EET" duration-ms="22971">
       <class name="MyTestCase.AlmosaferTest">
-        <test-method is-config="true" signature="MySetup()[pri:0, instance:MyTestCase.AlmosaferTest@4aa83f4f]" started-at="2026-03-10T23:14:51 EET" name="MySetup" finished-at="2026-03-10T23:14:53 EET" duration-ms="2365" status="PASS">
+        <test-method is-config="true" signature="MySetup()[pri:0, instance:MyTestCase.AlmosaferTest@19648c40]" started-at="2026-03-10T23:43:38 EET" name="MySetup" finished-at="2026-03-10T23:43:40 EET" duration-ms="2262" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- MySetup -->
-        <test-method signature="ClosePopUP()[pri:1, instance:MyTestCase.AlmosaferTest@4aa83f4f]" started-at="2026-03-10T23:14:54 EET" name="ClosePopUP" finished-at="2026-03-10T23:14:54 EET" duration-ms="412" status="PASS">
+        <test-method signature="ClosePopUP()[pri:1, instance:MyTestCase.AlmosaferTest@19648c40]" started-at="2026-03-10T23:43:40 EET" name="ClosePopUP" finished-at="2026-03-10T23:43:50 EET" duration-ms="10462" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ClosePopUP -->
-        <test-method signature="SearchForFlight()[pri:3, instance:MyTestCase.AlmosaferTest@4aa83f4f]" started-at="2026-03-10T23:14:54 EET" name="SearchForFlight" finished-at="2026-03-10T23:14:57 EET" duration-ms="3480" status="PASS">
+        <test-method signature="ChangeLanguage()[pri:2, instance:MyTestCase.AlmosaferTest@19648c40]" started-at="2026-03-10T23:43:50 EET" name="ChangeLanguage" finished-at="2026-03-10T23:43:57 EET" duration-ms="6820" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ChangeLanguage -->
+        <test-method signature="SearchForFlight()[pri:3, instance:MyTestCase.AlmosaferTest@19648c40]" started-at="2026-03-10T23:43:57 EET" name="SearchForFlight" finished-at="2026-03-10T23:44:00 EET" duration-ms="2976" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SearchForFlight -->
+        <test-method is-config="true" signature="CloseDriver()[pri:0, instance:MyTestCase.AlmosaferTest@19648c40]" started-at="2026-03-10T23:44:00 EET" name="CloseDriver" finished-at="2026-03-10T23:44:01 EET" duration-ms="382" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseDriver -->
       </class> <!-- MyTestCase.AlmosaferTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

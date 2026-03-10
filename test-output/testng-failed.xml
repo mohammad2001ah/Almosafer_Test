@@ -6,7 +6,7 @@
       <class name="MyTestCase.AlmosaferTest">
         <methods>
           <include name="MySetup"/>
-          <include name="ChangeLanguage"/>
+          <include name="ClosePopUP"/>
         </methods>
       </class> <!-- MyTestCase.AlmosaferTest -->
     </classes>
