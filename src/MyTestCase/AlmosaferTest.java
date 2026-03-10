@@ -10,6 +10,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -36,8 +38,7 @@ public class AlmosaferTest {
 				ContinueButton.click();
 				Assert.assertFalse(driver.findElement(By.id("mui-5")).isDisplayed());
 			}
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			System.out.println("Popup not found, continuing...");
 		}
 
@@ -74,14 +75,31 @@ public class AlmosaferTest {
 		driver.findElement(By.name("destination")).sendKeys(country2);
 		Thread.sleep(1000);
 		driver.findElement(By.name("destination")).sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
-		
+
 	}
-	@Test(priority = 4,enabled = true)
-	public void SetDate1() {
+
+	@Test(priority = 4, enabled = true)
+	public void SetDate1() throws InterruptedException {
 		WebElement checkIn = driver.findElement(By.id("testIdPickerPrefix__DatePicker__DepartureDate"));
 		checkIn.click();
-		driver.findElement(By.xpath("//button[text()='13']")).click();
-		driver.findElement(By.xpath("//button[text()='25']")).click();
+
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[@data-testid='FlightSearchCalendar__2026-03-13']")).click();
+		Thread.sleep(500);
+		boolean flag = true;
+		while (flag) {
+			String caption = driver.findElement(By.id("react-day-picker-2")).getText();
+			if (caption.contains("February") && caption.contains("2027")) {
+				flag = false;
+				break;
+			} else {
+				WebElement nextButton = driver.findElement(By.xpath("//button[@name='next-month']"));
+				nextButton.click();
+				Thread.sleep(1000);
+			}
+		}
+		driver.findElement(By.xpath("//button[@data-testid='FlightSearchCalendar__2027-02-25']")).click();
+		Thread.sleep(200);
 	}
 
 }
