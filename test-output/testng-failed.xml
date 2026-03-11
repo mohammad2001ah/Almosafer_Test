@@ -5,8 +5,10 @@
     <classes>
       <class name="MyTestCase.AlmosaferTest">
         <methods>
-          <include name="SetDate1"/>
           <include name="MySetup"/>
+          <include name="HotelSearch"/>
+          <include name="ClosePopUP"/>
+          <include name="Rooms"/>
         </methods>
       </class> <!-- MyTestCase.AlmosaferTest -->
     </classes>
