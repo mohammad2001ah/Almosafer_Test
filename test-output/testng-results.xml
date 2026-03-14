@@ -2,24 +2,24 @@
 <testng-results ignored="3" total="6" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-12T00:03:01 EET" name="Default suite" finished-at="2026-03-12T00:03:31 EET" duration-ms="29312">
+  <suite started-at="2026-03-14T23:35:25 EET" name="Default suite" finished-at="2026-03-14T23:36:12 EET" duration-ms="47185">
     <groups>
     </groups>
-    <test started-at="2026-03-12T00:03:01 EET" name="Default test" finished-at="2026-03-12T00:03:31 EET" duration-ms="29312">
+    <test started-at="2026-03-14T23:35:25 EET" name="Default test" finished-at="2026-03-14T23:36:12 EET" duration-ms="47185">
       <class name="MyTestCase.AlmosaferTest">
-        <test-method is-config="true" signature="MySetup()[pri:0, instance:MyTestCase.AlmosaferTest@19648c40]" started-at="2026-03-12T00:03:01 EET" name="MySetup" finished-at="2026-03-12T00:03:03 EET" duration-ms="2233" status="PASS">
+        <test-method is-config="true" signature="MySetup()[pri:0, instance:MyTestCase.AlmosaferTest@19648c40]" started-at="2026-03-14T23:35:25 EET" name="MySetup" finished-at="2026-03-14T23:35:27 EET" duration-ms="2211" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- MySetup -->
-        <test-method signature="ClosePopUP()[pri:1, instance:MyTestCase.AlmosaferTest@19648c40]" started-at="2026-03-12T00:03:04 EET" name="ClosePopUP" finished-at="2026-03-12T00:03:07 EET" duration-ms="3521" status="PASS">
+        <test-method signature="ClosePopUP()[pri:1, instance:MyTestCase.AlmosaferTest@19648c40]" started-at="2026-03-14T23:35:27 EET" name="ClosePopUP" finished-at="2026-03-14T23:35:30 EET" duration-ms="3463" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ClosePopUP -->
-        <test-method signature="HotelSearch()[pri:5, instance:MyTestCase.AlmosaferTest@19648c40]" started-at="2026-03-12T00:03:07 EET" name="HotelSearch" finished-at="2026-03-12T00:03:11 EET" duration-ms="3488" status="PASS">
+        <test-method signature="HotelSearch()[pri:5, instance:MyTestCase.AlmosaferTest@19648c40]" started-at="2026-03-14T23:35:31 EET" name="HotelSearch" finished-at="2026-03-14T23:35:34 EET" duration-ms="3543" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HotelSearch -->
-        <test-method signature="Rooms()[pri:6, instance:MyTestCase.AlmosaferTest@19648c40]" started-at="2026-03-12T00:03:11 EET" name="Rooms" finished-at="2026-03-12T00:03:31 EET" duration-ms="19993" status="PASS">
+        <test-method signature="Rooms()[pri:6, instance:MyTestCase.AlmosaferTest@19648c40]" started-at="2026-03-14T23:35:34 EET" name="Rooms" finished-at="2026-03-14T23:36:12 EET" duration-ms="37892" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Rooms -->

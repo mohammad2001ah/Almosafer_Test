@@ -122,23 +122,25 @@ public class AlmosaferTest {
 		driver.findElement(By.xpath("//div[@aria-label='Fri Mar 13 2026']")).click();
 		driver.findElement(By.xpath("//div[@aria-label='Mon Mar 30 2026']")).click();
 	}
-	
-	@Test(priority = 6,enabled = true)
+
+	@Test(priority = 6, enabled = true)
 	public void Rooms() throws InterruptedException {
-		WebElement roomElement= driver.findElement(By.xpath("//input[@placeholder='Select rooms']"));
+		WebElement roomElement = driver.findElement(By.xpath("//input[@placeholder='Select rooms']"));
 		roomElement.click();
-		
-		driver.findElement(By.cssSelector("[data-testid='DesktopSearchWidget_Guests_Reservation_Option_Test_Id_C_2']")).click();
+
+		driver.findElement(By.cssSelector("[data-testid='DesktopSearchWidget_Guests_Reservation_Option_Test_Id_C_2']"))
+				.click();
 		Thread.sleep(1000);
-		
-		List< WebElement> AdultsAndChildSelect = driver.findElements(By.cssSelector(".MuiSelect-select.MuiSelect-outlined.MuiInputBase-input.MuiOutlinedInput-input.alm-desktop-ida957"));
+
+		List<WebElement> AdultsAndChildSelect = driver.findElements(By.cssSelector(
+				".MuiSelect-select.MuiSelect-outlined.MuiInputBase-input.MuiOutlinedInput-input.alm-desktop-ida957"));
 		AdultsAndChildSelect.get(0).click();
 		driver.findElement(By.xpath("//div[text()='3 Adults']")).click();
 		Thread.sleep(1000);
 		AdultsAndChildSelect.get(1).click();
 		driver.findElement(By.xpath("//li[@data-value='3']")).click();
-		
-		List< WebElement> ChildAge = driver.findElements(By.cssSelector(".MuiSelect-select.MuiSelect-outlined.MuiInputBase-input.MuiOutlinedInput-input.alm-desktop-ida957"));
+		List<WebElement> ChildAge = driver.findElements(By.cssSelector(
+				".MuiSelect-select.MuiSelect-outlined.MuiInputBase-input.MuiOutlinedInput-input.alm-desktop-ida957"));
 		ChildAge.get(2).click();
 		driver.findElement(By.xpath("//li[@data-value='4']")).click();
 		ChildAge.get(3).click();
@@ -146,5 +148,8 @@ public class AlmosaferTest {
 		ChildAge.get(4).click();
 		driver.findElement(By.xpath("//li[@data-value='5']")).click();
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		
+		List<WebElement> HotelName=driver.findElements(By.xpath("//div[@data-testid='hotel_card_hotelName']"));
+		HotelName.get(0).click();
 		}
 }

@@ -6,9 +6,9 @@
       <class name="MyTestCase.AlmosaferTest">
         <methods>
           <include name="MySetup"/>
-          <include name="HotelSearch"/>
           <include name="ClosePopUP"/>
           <include name="Rooms"/>
+          <include name="HotelSearch"/>
         </methods>
       </class> <!-- MyTestCase.AlmosaferTest -->
     </classes>
